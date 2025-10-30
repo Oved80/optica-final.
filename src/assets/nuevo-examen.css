@@ -1,0 +1,231 @@
+/* NuevoExamen styles - Adaptado a modo oscuro */
+
+/* No definas variables aquí, las toma del SettingsContext */
+.nuevo-examen-outer {
+  min-height: 90vh;
+  background: var(--color-fondo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Card principal */
+.nuevo-examen-card {
+  width: 90%;
+  max-width: 720px;
+  background: var(--color-fondo-card);
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 30px var(--color-sombra);
+  border: 1px solid var(--color-borde);
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+  color: var(--color-texto);
+}
+
+/* Header */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.header-container h2 {
+  font-size: 24px;
+  color: var(--color-acento);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Botón de volver */
+.back-button {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  background: var(--color-acento);
+  color: var(--color-texto-boton);
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(41, 65, 110, 0.08);
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* Estructura del formulario */
+.form-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.form-group {
+  flex: 1 1 48%;
+  min-width: 260px;
+}
+
+/* Inputs y labels */
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--color-texto-secundario);
+  margin-bottom: 4px;
+}
+
+input[type=text],
+input[type=date],
+input[type=file],
+textarea,
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
+  background: var(--color-input);
+  color: var(--color-texto);
+  font-size: 14px;
+  height: 40px;
+}
+
+.form-group select {
+  height: 44px;
+  appearance: none;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+  padding: 10px 12px;
+}
+
+/* Autocomplete */
+.autocomplete {
+  position: relative;
+}
+
+.suggestions-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: var(--color-fondo-card);
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 6px 0;
+  z-index: 50;
+  max-height: 220px;
+  overflow: auto;
+  box-shadow: 0 8px 24px var(--color-sombra);
+}
+
+.suggestions-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--color-texto);
+}
+
+.suggestions-list li:hover {
+  background: var(--color-hover);
+}
+
+/* Subida de archivos */
+.upload-progress {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--color-texto-secundario);
+}
+
+/* Errores */
+.form-error {
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--color-error-fondo);
+  border: 1px solid var(--color-error-borde);
+  color: var(--color-error-texto);
+  margin-bottom: 10px;
+}
+
+/* Botón de enviar */
+.submit-button {
+  display: block;
+  margin: 14px auto 0;
+  padding: 10px 16px;
+  background: linear-gradient(180deg, var(--color-acento), var(--color-acento-secundario));
+  color: var(--color-texto-boton);
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(43, 123, 255, 0.18);
+  max-width: 360px;
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Botón secundario */
+.secondary-button {
+  background: var(--color-boton-secundario);
+  border: 1px solid var(--color-borde);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--color-texto);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 900px) {
+  .nuevo-examen-card {
+    width: 95%;
+    padding: 16px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .form-group {
+    flex: 1 1 100%;
+  }
+  .header-container h2 {
+    font-size: 20px;
+  }
+  .submit-button {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nuevo-examen-card {
+    padding: 12px;
+  }
+  input[type=text],
+  input[type=date],
+  textarea {
+    padding: 8px;
+  }
+  .header-container h2 {
+    font-size: 18px;
+  }
+}

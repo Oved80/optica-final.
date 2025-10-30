@@ -1,0 +1,260 @@
+/* === NUEVA REMISIÓN === */
+/* Visual igual a Nuevo Examen, sin alterar campos ni lógica */
+
+.nuevo-paciente-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #f8fbff 0%, #e9f0ff 100%);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* === CARD PRINCIPAL === */
+.card-wrap {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  position: relative;
+  transition: all 0.3s ease;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+/* === BOTÓN VOLVER === */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+/* === TITULOS === */
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #64748b;
+}
+
+/* === FORMULARIO === */
+.paciente-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 8px;
+}
+
+/* === FILAS === */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-group {
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === CAMPOS === */
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* === BUSCADOR === */
+.search-input {
+  display: flex;
+  gap: 10px;
+}
+
+.search-input input {
+  flex: 1;
+}
+
+.search-button {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.search-button:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+.suggestions-list {
+  margin-top: 6px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.suggestions-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #1e293b;
+}
+
+.suggestions-list li:hover {
+  background: #e0e7ff;
+}
+
+/* === ERRORES === */
+.form-error {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* === BOTONES FINALES === */
+.actions-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.submit-button {
+  background: linear-gradient(180deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-1px);
+}
+
+.cancel-button {
+  background: #e2e8f0;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.cancel-button:hover {
+  background: #cbd5e1;
+}
+
+/* === SCROLL PERSONALIZADO === */
+.suggestions-list::-webkit-scrollbar {
+  width: 6px;
+}
+.suggestions-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .card-wrap {
+    padding: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .actions-row {
+    flex-direction: column;
+  }
+
+  .submit-button,
+  .cancel-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,49 @@
+/* ===== Layout Base ===== */
+.layout-base {
+  display: flex;
+  min-height: 100vh;
+  height: 100vh; /* ✅ fuerza que el layout completo ocupe toda la ventana */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg, #1e293b);
+  color: white;
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+  overflow-y: auto;
+  min-height: 100vh; /* ✅ se asegura que se estire hasta el final */
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* ===== Contenido Principal ===== */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--content-bg, #f9fafb);
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* ===== Tema Oscuro ===== */
+.layout-base.dark {
+  --sidebar-bg: #0f172a;
+  --content-bg: #1e293b;
+  color: white;
+}
+
+/* ===== Scroll ===== */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}

@@ -1,0 +1,148 @@
+/* ==================================================== */
+/* 🎨 VARIABLES GLOBALES DE TEMA */
+/* ==================================================== */
+:root {
+  --color-text-primary: #111827;
+  --color-bg-primary: #f3f4f6;
+  --color-bg-secondary: #ffffff;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-navbar: #1e3a8a;
+  --color-footer-bg: #222;
+  --color-footer-text: #fff;
+}
+
+/* === Tema Oscuro === */
+[data-theme="dark"] {
+  --color-text-primary: #f9fafb;
+  --color-bg-primary: #111827;
+  --color-bg-secondary: #1f2937;
+  --color-accent: #60a5fa;
+  --color-accent-hover: #3b82f6;
+  --color-navbar: #374151;
+  --color-footer-bg: #1e293b;
+  --color-footer-text: #e5e7eb;
+}
+
+/* ==================================================== */
+/* 🌎 ESTILOS GLOBALES */
+/* ==================================================== */
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==================================================== */
+/* 🧭 NAVBAR Y FOOTER */
+/* ==================================================== */
+.navbar {
+  background-color: var(--color-navbar);
+  color: #fff;
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==================================================== */
+/* 🧱 TARJETAS Y CONTENEDORES */
+/* ==================================================== */
+.main-content, .page-container, .content {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[class^="card-"], [class*=" card-"] {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover */
+[class^="card-"]:hover, [class*=" card-"]:hover {
+  background-color: var(--color-accent-hover);
+  color: #fff;
+}
+
+/* ==================================================== */
+/* ✏️ TIPOGRAFÍA Y ENLACES */
+/* ==================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-primary);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ==================================================== */
+/* 🔘 BOTONES */
+/* ==================================================== */
+button {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* ==================================================== */
+/* 🪟 INPUTS Y FORMULARIOS */
+/* ==================================================== */
+input, textarea, select {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 8px;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==================================================== */
+/* 🕶️ MODO OSCURO: REGLAS EXTRAS */
+/* ==================================================== */
+[data-theme="dark"] [class^="card-"],
+[data-theme="dark"] [class*=" card-"],
+[data-theme="dark"] .main-content,
+[data-theme="dark"] .content,
+[data-theme="dark"] .page-container {
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text-primary) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+}
+
+/* inputs blancos en modo oscuro */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
